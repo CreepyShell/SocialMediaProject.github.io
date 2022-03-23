@@ -1,0 +1,194 @@
+.tool-bar {
+  background-color: rgb(19, 19, 19);
+  min-width: 60rem;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 1.6rem;
+  display: inline;
+  color: antiquewhite;
+}
+
+.content a {
+  display: inline;
+  float: right;
+  text-decoration: none;
+  color: rgb(187, 48, 48);
+}
+.go-to-user-profile {
+  border-bottom: 2px solid green;
+}
+
+.content a:hover {
+  color: rgb(209, 64, 64);
+}
+
+.register-button,
+.login-button {
+  color: rgb(45, 233, 101);
+  background: none;
+  border: 1.6px solid rgb(206, 240, 12);
+  font-size: 1rem;
+  padding: 1px 1rem 1px 1rem;
+}
+
+.login-button[disabled="true"],
+.register-button[disabled="true"] {
+  cursor: default;
+  color: rgb(24, 116, 52);
+  border: 1.6px solid rgb(101, 117, 7);
+}
+
+.register-button {
+  margin-right: 0.6rem;
+}
+
+.register-button:hover,
+.login-button:hover {
+  background: rgb(42, 42, 43);
+  cursor: pointer;
+}
+
+.main-content {
+  display: table;
+  color: whitesmoke;
+  background-image: url("/assets/pictures/main_page_photo.jpg");
+  width: 100%;
+  min-height: 100%;
+  border: 1 px solid red;
+}
+
+.post-content {
+  width: 50rem;
+  float: right;
+  margin-right: 10rem;
+}
+
+.open-create-post-button {
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: block;
+  border: none;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(145, 214, 42);
+  font-size: 1rem;
+  font-family: Serif Georgia;
+}
+
+.open-create-post-button:hover {
+  cursor: pointer;
+  background-color: greenyellow;
+  box-shadow: 0.5rem 0.5rem 0.8rem 0.3rem rgba(39, 151, 39, 0.2);
+}
+
+.create-post-form {
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 90%;
+}
+
+.disc-topic {
+  font-size: 0.8rem;
+  width: 11rem;
+  text-align: center;
+  margin: auto;
+  margin-top: 1rem;
+  display: block;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: rgb(255, 253, 129) !important;
+}
+
+.post-header-container {
+  display: block;
+  height: 1.4rem;
+  margin: auto;
+}
+
+#post-header {
+  display: block;
+  margin: auto;
+  margin-top: -1.2rem;
+  padding: 0.3rem;
+  background: none;
+  border: none;
+  text-align: center;
+  border-bottom: 1px solid green;
+  width: 20rem;
+  font-size: small;
+  color: whitesmoke;
+}
+
+#post-header:hover {
+  cursor: pointer;
+  border-bottom: 2px solid green;
+}
+
+#post-header:focus {
+  outline: none;
+  color: bisque;
+  border-bottom: 2px solid rgb(165, 0, 36);
+}
+
+.post-description-container {
+  height: 9.5rem;
+}
+
+#description {
+  display: block;
+  margin: auto;
+  outline: none;
+  width: 20rem;
+  resize: none;
+  border: 1px solid wheat;
+  background: rgb(39, 39, 39);
+  color: whitesmoke;
+  padding: 0.5rem;
+}
+
+#description:hover {
+  border: 2px solid wheat;
+  cursor: pointer;
+}
+
+#description:focus {
+  border: 2px solid rgb(165, 0, 36);
+  color: aliceblue;
+}
+
+.error-message {
+  color: red;
+  display: block;
+  text-align: center;
+  margin-top: -0.6rem;
+  font-size: smaller;
+}
+
+.create-post-button {
+  display: block;
+  margin: auto;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(
+    rgba(38, 130, 89, 1) 19%,
+    rgba(22, 138, 18, 1) 99%
+  );
+  color: rgb(212, 212, 212);
+}
+
+.create-post-button:hover {
+  cursor: pointer;
+  background: rgb(48, 158, 54);
+}

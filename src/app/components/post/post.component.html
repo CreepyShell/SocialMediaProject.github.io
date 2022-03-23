@@ -1,0 +1,58 @@
+<div class="post-container">
+    <div class="post-actions-buttons">
+        <button class="deletePost" (click)="deletePostLikeAdmin()" *ngIf="this.canDeleteLikeAdmin()">delete post like
+            admin</button>
+        <button class="deletePost" (click)="deletePostLikeUser()" *ngIf="this.canDeleteLikeUser()">delete
+            post</button><br />
+        <button class="editPost" (click)="editPost()" *ngIf="this.canUpdate()">edit post</button>
+    </div>
+    <div class="post-times">
+        <p>Created at {{this.Post?.createdAt | date:'medium'}}</p>
+        <p *ngIf="this.Post?.updatedAt">Updated at {{this.Post?.updatedAt | date:'medium'}}</p>
+    </div>
+    <div class="post-author-info" *ngIf="this.isLoadAuthor">
+        <img [src]="this.postAuthor?.avatar" width="40vw" height="40hws"
+            onerror="this.src='/assets/pictures/user_profile.png'">
+        <h5>{{this.postAuthor!.userName}}</h5>
+    </div>
+    <div class="post-info">
+        <h4>{{this.Post?.postTopic}}</h4>
+        <h1 [contentEditable]="this.isEditable" [id]="this.Post?.id + ' header'">{{this.Post?.header}}</h1>
+        <p [contentEditable]="this.isEditable" [id]="this.Post?.id + ' text'">{{this.Post?.text}}</p>
+        <p class="error-message" *ngIf="this.error_updatePost_message">{{this.error_updatePost_message}}</p>
+        <button class="update-post-button" (click)="updatePost()" *ngIf="this.isEditable">
+            <mat-icon class="update-icon" color="accent" inline="true">done_outline</mat-icon>
+        </button>
+    </div>
+    <div class="post-reactions">
+        <button class="like-button" [ngStyle]="this.likeStyle" (click)="reactPost(true)"
+            [disabled]="this.disabled_likes" mat-raised-button color="primary" [matBadge]="this.positiveReactionsCount"
+            matBadgePosition="after" matBadgeColor="accent">
+            <mat-icon>thumb_up</mat-icon>
+        </button>
+        <button class="dislike-button" [ngStyle]="this.dislikeStyle" (click)="reactPost(false)"
+            [disabled]="this.disabled_likes" mat-raised-button color="primary"
+            [matBadge]="this.reactionCount - this.positiveReactionsCount" matBadgePosition="after"
+            matBadgeColor="accent">
+            <mat-icon>thumb_down</mat-icon>
+        </button>
+    </div>
+    <button class="open-comments" mat-raised-button color="primary" [matBadge]="this.comments.length"
+        matBadgePosition="after" matBadgeColor="accent" (click)="openComments()">open comments
+    </button>
+    <div *ngIf="this.isOpenComments" class="comment-container">
+        <div *ngFor="let comment of comments">
+            <app-comment (deleteCommentEvent)="this.deleteCommentEvent($event)" [User]="this.User!" [Comment]="comment"></app-comment>
+        </div>
+        <button (click)="openSingleCommentContainer()" class="create-comment">
+            <mat-icon style="font-size: 2rem;" color="warn">add</mat-icon>
+        </button><br />
+        <div *ngIf="this.isOpenSingleCommentContainer">
+            <textarea maxlength="140" class="comment-text" [id]="'comment' + this.Post!.id"
+                placeholder="enter comment text" autocomplete="off" rows="4"></textarea><br />
+            <button class="send-comment" (click)="addSingleComment()">
+                <mat-icon style="font-size: 2rem;" color="accent">send</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

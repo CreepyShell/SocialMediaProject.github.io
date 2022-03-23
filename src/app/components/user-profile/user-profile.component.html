@@ -1,0 +1,76 @@
+<div class="all-user-page">
+    <div class="user-header">
+        <button (click)="goBack()" class="go-back">
+            <fa-icon [icon]="faArrowLeft"></fa-icon>
+        </button>
+        <button class="log-out" (click)="LogOut()">Log out</button>
+    </div>
+    <mat-spinner [diameter]="180" *ngIf="!this.loadUser">
+    </mat-spinner>
+    <div *ngIf="this.loadUser && this.User" class="user-page">
+        <div class="user-page-header">
+            <img [src]="this.User?.avatar" id="user-img" onerror="this.src='/assets/pictures/user_profile.png'" width="50vw" height="50hw">
+            <h1>
+                {{this.User.userName}}
+            </h1>
+        </div>
+        <div class="user-info">
+            <p class="user-mail"> Mail: <span class="user-data">{{this.User.email}}</span></p>
+            <p class="user-age">Age: <span class="user-data"> {{this.User.age ?? "_"}}</span></p>
+        </div>
+        <form class="update-user-form" (submit)="false">
+            <label for="name">First name: </label>
+            <input [disabled]="!this.isEdit" [value]="this.divideUserName(0)" type="text" id="name"><br>
+            <label for="surname">Surname: </label>
+            <input [disabled]="!this.isEdit" [value]="this.divideUserName(1)" type="text" id="surname"><br>
+
+            <label for="birthday">Birthday: </label>
+            <input [disabled]="!this.isEdit" type="date"[value]="this.getBirthday()" id="birthday"><br>
+
+            <label for="bio">About you: </label>
+            <input [disabled]="!this.isEdit" [value]="this.User.bio" multiple="true" type="text" id="bio"><br>
+            <input *ngIf="this.isEdit" type="url" id="ava-url" placeholder="enter new avatar url"><br
+                *ngIf="this.isEdit">
+            <p *ngIf="!this.isEdit" class="registered">Registered at {{this.User.registeredAt | date:'longDate'}}</p>
+            <p class="error-update-message" style="color:rgb(255, 85, 85)" *ngIf="this.errorUpdateUser">{{this.errorUpdateUser}}</p>
+            <button *ngIf="this.isEdit" (click)="sumbitEditedProfile()" class="submit-button">Sumbit</button>          
+        </form>
+        <button class="edit-button" (click)="edit()">Edit profile</button><br>
+        <button class="security-open-button" (click)="openSecuritySettings()">Open security settings</button>
+        <div class="security-settings" *ngIf="this.showSecuritySettings">
+            <div class="update-password">
+                <input type="password" placeholder="current password" id="password">
+                <button *ngIf="this.showCurrentPassword" class="showconfpass" (click)="showCurrentPass()">
+                    <fa-icon [icon]="faShowPass"></fa-icon>
+                </button>
+                <button *ngIf="!this.showCurrentPassword" class="showconfpass" (click)="showCurrentPass()">
+                    <fa-icon [icon]="faNotShowPass"></fa-icon>
+                </button>
+
+                <input type="password" placeholder="new password" id="new-password">
+                <button *ngIf="this.showNewPassword" class="showconfpass" (click)="showNewPass()">
+                    <fa-icon [icon]="faShowPass"></fa-icon>
+                </button>
+                <button *ngIf="!this.showNewPassword" class="showconfpass" (click)="showNewPass()">
+                    <fa-icon [icon]="faNotShowPass"></fa-icon>
+                </button><br>
+                <button class="update-password-button" [disabled]="this.disableButton" (click)="changePassword()">Change
+                    password</button>
+                <p style="color:red" class="error-message" *ngIf="this.errorMessage">{{this.errorMessage}}</p>
+                <p style="color:rgb(6, 196, 6)" class="result-message" *ngIf="this.resultMessage">{{this.resultMessage}}
+                </p>
+            </div>
+            <div class="update-codeWord">
+                <input placeholder="new code words" type="text" id="new-code-words" autocomplete="off"><br>
+                <button [disabled]="this.disableButton" class="update-codeword-button" (click)="updateCodeWord()">Change
+                    code word</button>
+                <p style="color:red" class="error-message" *ngIf="this.errorCodeMessage">{{this.errorCodeMessage}}</p>
+                <p style="color:rgb(6, 196, 6)" class="result-message" *ngIf="this.resultCodeMessage">
+                    {{this.resultCodeMessage}}</p>
+            </div>
+        </div>
+        <div>
+            <button class="delete-profile-button" (click)="deleteProfile()">Delete profile</button>
+        </div>
+    </div>
+</div>

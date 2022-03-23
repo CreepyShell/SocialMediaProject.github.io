@@ -1,0 +1,289 @@
+.all-user-page {
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/pictures/user_profile.jpg");
+  text-align: center;
+  display: inline-table;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.user-header {
+  padding: 0;
+  height: 3.75rem;
+}
+
+.go-back {
+  float: left;
+  margin: 0.8em;
+  background: none;
+  border: none;
+  color: aqua;
+  font-size: 1.5em;
+}
+
+.go-back:hover {
+  color: rgb(106, 97, 235);
+  cursor: pointer;
+}
+
+.log-out {
+  display: block;
+  float: right;
+  margin: 1em;
+  background: none;
+  border: none;
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  border-radius: 0.75rem;
+  color: #ffffff;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.log-out:hover {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+  cursor: pointer;
+}
+
+mat-spinner{
+  margin:auto;
+  margin-top: 10%;
+}
+
+.user-page {
+  border: 0.31rem solid rgb(255, 255, 255);
+  height: auto;
+  width: 31.2rem;
+  margin: auto;
+  background-color: rgb(56, 56, 56);
+  padding: 1.25rem 0px 1.25rem 0px;
+  margin-bottom: 4rem;
+}
+
+.user-page-header {
+  margin: auto;
+  text-align: center;
+}
+
+.user-page-header h1,
+.user-page-header,
+img {
+  display: inline-block;
+}
+
+.user-page-header h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-left: 1vw;
+  vertical-align: middle;
+  margin-top: -1vw;
+  border-bottom: 5px solid rgb(37, 37, 37);
+  border-image: radial-gradient(rgb(22, 255, 92) 30%, rgb(56, 56, 56));
+  border-image-slice: 1;
+  color: rgb(80, 201, 218);
+}
+
+.user-page-header img {
+  border-radius: 50%;
+}
+
+.registered {
+  font-size: 0.6em;
+  display: block;
+  margin-top: -0.5rem;
+  color: rgb(208, 233, 255);
+}
+
+.user-info p {
+  display: inline-block;
+  color: rgb(195, 223, 255);
+}
+
+.user-mail {
+  padding-right: 1.25rem;
+}
+
+.user-data {
+  color: aquamarine;
+}
+
+.update-user-form input {
+  background: none;
+  border: none;
+  margin-bottom: 1rem;
+  border-bottom: 0.15rem solid rgb(62, 202, 62);
+  color: aquamarine;
+}
+
+.update-user-form label {
+  color: rgb(195, 223, 255);
+}
+
+#ava-url {
+  width: 70%;
+  text-align: center;
+}
+#bio{
+  width:60%;
+  overflow-y: scroll;
+}
+
+.update-user-form input[disabled] {
+  border-bottom: 0.15rem solid rgb(0, 92, 0);
+  color: aquamarine;
+}
+
+.update-user-form input:focus {
+  outline: none;
+  color: antiquewhite;
+}
+
+.submit-button {
+  background-image: linear-gradient(
+    to right top,
+    rgb(176, 199, 64) 0%,
+    rgb(57, 223, 52) 55%,
+    rgb(199, 211, 69) 99%
+  );
+  border-radius: 0.5rem;
+  margin: 0.1rem 0rem 0.5rem 0rem;
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  font-weight: bolder;
+  color: #330815;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background: greenyellow;
+}
+
+.error-update-message{
+  margin-top: -0.7rem;
+  font-size: 0.8rem;
+}
+
+.edit-button {
+  border-radius: 0.5rem;
+  width: 9.375rem;
+  border: none;
+  outline: none;
+  font-family: DejaVu Sans Mono;
+  background-color: rgb(125, 246, 255);
+  color: rgb(0, 61, 28);
+  font-weight: bold;
+}
+
+.edit-button:hover {
+  cursor: pointer;
+  background-color: rgb(0, 233, 250);
+}
+
+.security-open-button {
+  background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #222222;
+  font-size: 0.813rem;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  width: 9.375rem;
+  margin: 0.625rem 0rem 0.625rem 0rem;
+}
+
+.security-open-button:hover {
+  background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
+}
+
+.update-password input,
+#new-code-words {
+  background: none;
+  border: none;
+  text-align: center;
+  border-bottom: 1px solid red;
+  margin-bottom: 0.8rem;
+  width: 50%;
+  color: whitesmoke;
+}
+
+.showconfpass {
+  background: none;
+  border: none;
+  color: rgb(150, 150, 150);
+  font-size: 0.8rem;
+}
+
+.showconfpass:hover {
+  color: rgb(161, 161, 161);
+  cursor: pointer;
+}
+
+.update-password input::placeholder,
+#new-code-words::placeholder {
+  color: rgb(168, 168, 168);
+}
+
+.update-password input:focus,
+#new-code-words:focus {
+  outline: none;
+}
+
+.update-password-button,
+.update-codeword-button {
+  margin: 0.313rem 0px 1.25rem 0px;
+  background: greenyellow;
+  border: none;
+  padding: 0.063rem 0.625rem 0.063rem 0.625rem;
+  border-radius: 5rem;
+}
+
+.update-password-button:hover,
+.update-codeword-button:hover {
+  cursor: pointer;
+  background: rgb(86, 211, 86);
+}
+
+.update-password-button[disabled],
+.update-codeword-button[disabled] {
+  cursor: default;
+  background-color: rgb(42, 104, 42);
+}
+
+.error-message,
+.result-message {
+  margin-top: -1rem;
+  font-size: 0.5rem;
+}
+
+.delete-profile-button {
+  background-color: rgb(253, 132, 51);
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5rem;
+  font-family: sans-serif;
+  color: rgb(70, 70, 70);
+  transition: all 0.3s ease;
+}
+
+.delete-profile-button:hover {
+  background-color: rgb(253, 91, 51);
+  cursor: pointer;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(233, 19, 58, 0.5),
+    0.125rem 0.125rem 1rem rgba(238, 111, 32, 0.5);
+}

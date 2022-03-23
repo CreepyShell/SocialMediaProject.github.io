@@ -1,0 +1,215 @@
+.post-container {
+  margin-bottom: 8rem;
+  width: 100%;
+  border: 2px solid rgb(0, 255, 136);
+  padding: 1rem;
+  background: rgb(51, 51, 51);
+}
+
+.post-actions-buttons {
+  float: right;
+  padding: 1rem;
+}
+
+.post-times {
+  font-size: 0.5rem;
+  color: rgb(165, 152, 133);
+  font-family: mv boli;
+}
+
+.post-author-info img {
+  border-radius: 50%;
+}
+
+.post-author-info h5 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 0.5vw;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  color: #69dd99;
+}
+
+.post-author-info img,
+.post-author-info h5 {
+  display: inline-block;
+}
+
+.post-info h4 {
+  margin: -0.5rem 0rem 1rem 1rem;
+  color: aqua;
+}
+
+.post-info h1 {
+  font-size: 1.7rem;
+  color: #c2cca7;
+  margin-top: -1.2rem;
+  font-family: Didot;
+}
+
+.post-info p {
+  color: #cacaca;
+  font-family: consolas;
+}
+
+.post-info h1[contenteditable="true"],
+.post-info p[contenteditable="true"] {
+  border-bottom: 2px solid green;
+  outline: none;
+}
+
+.post-info h1[contenteditable="true"]:focus,
+.post-info p[contenteditable="true"]:focus {
+  border-bottom: 2px solid rgb(7, 185, 7);
+}
+
+.deletePost {
+  border: none;
+  font-size: 1rem;
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #a85221, #910909);
+  border-radius: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #cacaca;
+  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  height: 1.5rem;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 12rem;
+  border: 0;
+  transition: box-shadow 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.deletePost:hover {
+  cursor: pointer;
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+
+.editPost {
+  background: blue;
+  font-size: 1rem;
+  color: #a8c94f;
+  border: none;
+  width: 12rem;
+  height: 1.5rem;
+  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  border-radius: 0.4rem;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+}
+
+.editPost:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 202, 253, 0.5) 0 3px 8px;
+}
+
+.error-message {
+  display: block;
+  color: red !important;
+  margin-top: -0.8rem;
+  font-size: x-small;
+}
+
+.update-post-button {
+  background: none;
+  outline: none;
+  border: 2px solid rgb(61, 189, 228);
+  padding: 0.6rem 0.5rem 0.3rem 0.5rem;
+  border-radius: 50%;
+  margin-left: 15rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.update-post-button:hover {
+  cursor: pointer;
+  background-color: rgb(97, 96, 96);
+}
+
+.dislike-button .mat-badge-content {
+  background: none;
+  color: red;
+}
+
+.like-button .mat-badge-content {
+  background: none;
+  color: greenyellow;
+}
+
+.post-reactions button {
+  background: none;
+  border:none;
+  margin: 0.5rem 1rem 1rem 0rem;
+}
+
+.post-reactions > button > mat-icon:hover{
+  cursor: pointer;
+  transform: scale(1.07);
+}
+
+.open-comments{
+  background:none;
+  border:none;
+  border-bottom:1px solid rgb(133, 133, 230);
+  font-size: 1rem;
+  color:#b5bd9f;
+  outline: none;
+}
+
+.open-comments .mat-badge-content {
+  background: none;
+  color:antiquewhite;
+}
+
+.open-comments:hover{
+  cursor: pointer;
+  color:#d1dfb6;
+}
+
+.create-comment{
+  background: none;
+  border:none;
+  margin:0.5rem 0rem 0rem 1rem;
+}
+
+.create-comment mat-icon:hover{
+  cursor: pointer;
+  color:#df0606;
+}
+
+.comment-text{
+  background: none;
+  border:none;
+  padding:0.5rem;
+  border:1.5px solid rgb(148, 175, 50);
+  width: 20rem;
+  color: rgb(206, 206, 206);
+  resize: none;
+}
+
+.comment-text:focus{
+  outline: none;
+  border:1.5px solid rgb(185, 219, 62);
+}
+
+.send-comment{
+  margin:0.5rem 0rem 0rem 18rem;
+  background: none;
+  border:none;
+  font-size: 1rem;
+  transform: scaleX(1.2);
+}
+
+.send-comment mat-icon:hover{
+  cursor: pointer;
+  color:white;
+}

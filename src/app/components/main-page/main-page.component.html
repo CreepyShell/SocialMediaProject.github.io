@@ -1,0 +1,40 @@
+<mat-toolbar class="tool-bar">
+    <div class="content">
+        <h1>Welcome to Internet forum!</h1>
+        <a [routerLink]="this.route"><button *ngIf="!this.User" [disabled]="!this.isLoadUser" class="login-button"
+                (click)="GoToLoginPage()">Login</button></a>
+        <a [routerLink]="this.route"><button *ngIf="!this.User" [disabled]="!this.isLoadUser" class="register-button"
+                (click)="GoToRegisterPage()">Register</button></a>
+        <a routerLink="/profile" class="go-to-user-profile" *ngIf="this.User">Go to profile</a>
+        </div>
+</mat-toolbar>
+<div class="main-content">
+    <button class="open-create-post-button" (click)="openCreatePostContainer()">Create discussion</button>
+    <form class="create-post-form" *ngIf="this.isOpenCreatePost" (submit)="false">
+        <mat-form-field class="disc-topic" appearance="fill">
+            <mat-label>Enter discussion topic</mat-label>
+            <mat-select class="selected-value" name="post-topic" [(ngModel)]="selectedPostTopic">
+                <mat-option value="Activities">Activities</mat-option>
+                <mat-option value="Studing">Studing</mat-option>
+                <mat-option value="Peoples">Peoples</mat-option>
+                <mat-option value="Films">Films</mat-option>
+                <mat-option value="Another">Another</mat-option>
+            </mat-select>
+        </mat-form-field><br />
+        <div class="post-header-container">
+            <input placeholder="enter discussion header" id="post-header" autocomplete="off">
+        </div><br />
+        <div class="post-description-container"><textarea id="description" maxlength="300" rows="8"
+                placeholder="enter discussion description" autocomplete="off"></textarea><br />
+        </div>
+        <p class="error-message" *ngIf="this.errorCreatePostMessage">{{this.errorCreatePostMessage}}</p>
+        <button class="create-post-button" type="button" (click)="createPost()">Create</button>
+    </form>
+    <mat-spinner [diameter]="200" style="margin: auto;" *ngIf="!this.isLoadUser || !this.isLoadPosts">
+    </mat-spinner>
+    <div class="post-content" *ngIf="this.isLoadUser && this.isLoadPosts">
+        <div *ngFor="let Post of Posts">
+            <app-post [Post]="Post" (deletePostEvent)="deletePostEvent($event)" [User]="this.User"></app-post>
+        </div>
+    </div>
+</div>

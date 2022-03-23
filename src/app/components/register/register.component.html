@@ -1,0 +1,29 @@
+<div class="register-page">
+    <h1>Sign up</h1>
+    <form class="input" onsubmit="return false">
+        <input placeholder="Username" type="text" maxlength="30" id="username" name="user_name" autocomplete="off"><br />
+        <input placeholder="Email" type="email" id="mail" name="user_mail" autocomplete="off"><br />
+        <input type="password" placeholder="Password" id="pass" name="user_passs"
+            autocomplete="off"><br />
+        <button *ngIf="this.showpassword" class="showpass" (click)="showPassword()">
+            <fa-icon [icon]="faShowPass"></fa-icon>
+        </button>
+        <button *ngIf="!this.showpassword" class="showpass" (click)="showPassword()">
+            <fa-icon [icon]="faNotShowPass"></fa-icon>
+        </button>
+        <input id="confirm-pass" type="password" placeholder="Confirm password" name="user_passs"
+            autocomplete="off"><br />
+        <button *ngIf="this.show_confpassword" class="showconfpass" (click)="showConfPassword()">
+            <fa-icon [icon]="faShowPass"></fa-icon>
+        </button>
+        <button *ngIf="!this.show_confpassword" class="showconfpass" (click)="showConfPassword()">
+            <fa-icon [icon]="faNotShowPass"></fa-icon>
+        </button>
+        <button class="register-button" [disabled]="this.disableButton" (click)="register()">Register</button><br />
+        <p *ngIf="this.errorMessage" class="error-message">{{this.errorMessage}}</p>
+    </form>
+    <div class="another-actions">
+        <p>Already have an account? <a routerLink="/login">Login</a></p>
+        <a class="go-back" routerLink="">Back to main page</a>
+    </div>
+</div>

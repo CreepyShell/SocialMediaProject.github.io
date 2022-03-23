@@ -1,0 +1,121 @@
+.comment-container {
+  width: 25rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.comment-actions {
+  float: right;
+}
+
+.delete-comment-admin,
+.delete-comment-user,
+.update-comment,
+.send-comment-button {
+  background: none;
+  border: none;
+}
+
+.send-comment-button mat-icon {
+  color: rgb(72, 105, 252);
+}
+
+.delete-comment-admin mat-icon {
+  color: rgb(255, 46, 46);
+}
+
+.update-comment {
+  color: rgb(91, 183, 211);
+}
+
+.delete-comment-admin mat-icon:hover,
+.delete-comment-user mat-icon:hover,
+.update-comment mat-icon:hover,
+.send-comment-button mat-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.comment-date {
+  font-size: xx-small;
+  color: rgb(192, 179, 160);
+  font-family: mv boli;
+}
+
+.author-info > img {
+  border-radius: 50%;
+  display: block;
+}
+
+.author-info > h6 {
+  font-weight: normal;
+  display: block;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  color: #69dd99;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: row;
+  height: 1.6rem;
+}
+
+.comment-info > h5 {
+  font-weight: normal;
+  color: rgb(197, 243, 243);
+  font-size: large;
+  font-family: American Typewriter;
+  margin-top: 0.5rem;
+}
+
+.comment-info > h5[contenteditable="true"]{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid greenyellow;
+}
+
+.error-message{
+  color:red;
+  font-size: x-small;
+  margin-top:-1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.send-comment-button {
+  display: block;
+  margin:-1.5rem 0rem 1rem 7rem; 
+}
+
+.comment-dislike-button,
+.comment-like-button {
+  background: none;
+  border: none;
+}
+
+.comment-like-button mat-icon:hover,
+.comment-dislike-button mat-icon:hover{
+  color:rgb(204, 204, 204);
+  transform: scale(1.06);
+  cursor: pointer;
+}
+
+.comment-reactions {
+  width: 20rem;
+  margin-top: -1rem;
+}
+
+.comment-reactions .mat-badge-content{
+  background: none;
+  color:rgb(224, 224, 224);
+}
+
+.comment-like-button {
+  margin-left: 10rem;
+}
+
+.add-comment-to-comment {
+  margin-left: 17rem;
+  background: none;
+  border: none;
+}

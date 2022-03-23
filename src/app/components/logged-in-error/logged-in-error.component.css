@@ -1,0 +1,53 @@
+.error-class {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  float: left;
+  text-align: center;
+  display: inline-table;
+  font-size: 23px;
+}
+
+.error-class h1 {
+  margin-top: 150px;
+  color: rgb(252, 80, 80);
+}
+
+.error-class h4 {
+    margin-top:-20px;
+  color: rgb(231, 136, 58);
+}
+
+.error-class a {
+  display: block;
+  min-height: 140px;
+}
+
+.error-class button {
+  background: linear-gradient(to bottom right, #a6b334, #b85d24);
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  white-space: nowrap;
+  color: beige;
+  border: none;
+  font-size: 25px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.error-class button:hover{
+    background: linear-gradient(to bottom right, #e5ff00, #ff6200);
+  cursor: pointer;
+}
+
+.error-class a{
+    text-decoration: none;
+    display: inline;
+    color:rgb(20, 194, 142);
+}
+
+.error-class a:hover{
+    text-decoration: none;
+    display: inline;
+    color:rgb(113, 204, 177);
+}

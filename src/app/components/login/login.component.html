@@ -1,0 +1,30 @@
+<div class="login-page">
+    <h1 class="singIn">Sign in</h1>
+    <div class="login-form">
+        <mat-button-toggle-group #group="matButtonToggleGroup" name="login" aria-label="Font Style" class="toggle"
+            [value]="this.selectedValue" (change)="onValChange(group.value)">
+            <mat-button-toggle value="username">Username</mat-button-toggle>
+            <mat-button-toggle value="email">Email</mat-button-toggle>
+        </mat-button-toggle-group><br>
+        <div class="input">
+            <input *ngIf="isUsernameChosen" placeholder="Username" type="text" id="username" name="user_name"
+                autocomplete="off"><br *ngIf="isUsernameChosen" />
+            <input *ngIf="!isUsernameChosen" placeholder="Email" type="email" id="mail" name="user_mail"
+                autocomplete="off"><br *ngIf="!isUsernameChosen" />
+            <input type="password" placeholder="Password" required minlength="4" id="pass" name="user_passs"
+                autocomplete="off"><br />
+            <button *ngIf="this.showpassword" class="showpass" (click)="showPassword()">
+                <fa-icon [icon]="faShowPass"></fa-icon>
+            </button>
+            <button *ngIf="!this.showpassword" class="showpass" (click)="showPassword()">
+                <fa-icon [icon]="faNotShowPass"></fa-icon>
+            </button>
+        </div>
+        <button class="login-button" (click)="login()" [disabled]="this.disableButton">Login</button><br />
+        <p class="error-message" *ngIf="this.errorMessage">{{this.errorMessage}}</p>
+    </div>
+    <div class="another-actions">
+        <p>Still no account? <a routerLink="/register">Register</a></p>
+        <a class="go-back" routerLink="">Back to main page</a>
+    </div>
+</div>

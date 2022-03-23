@@ -1,0 +1,141 @@
+.login-page {
+  float: left;
+  margin: auto;
+  width: 100%;
+  height:100%;
+  background-image: url("/assets/pictures/login_photo.jpg");
+  text-align: center;
+  display: inline-table;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.singIn {
+  margin: auto;
+  margin-top: 6vw;
+  margin-bottom: 2vw;
+  color: white;
+  border-bottom: 0.4vw solid green;
+  width: 10vw;
+  font-family: none;
+  font-size: 2.5vw;
+}
+
+.login-form {
+  border: 2px solid rgb(0, 1, 10);
+  border-image: linear-gradient(
+    to right top,
+    rgba(19, 22, 43, 1) 0%,
+    rgba(9, 10, 121, 1) 47%,
+    rgba(219, 223, 27, 1) 100%
+  );
+  width: 25vw;
+  height:auto;
+  margin: auto;
+  border-image-slice: 1;
+  padding: 2vw;
+  text-align: center;
+}
+
+mat-button-toggle-group {
+  height: 2vw;
+  margin-bottom: 2vw;
+}
+
+mat-button-toggle {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  color: rgb(158, 158, 158);
+  background: none;
+  font-size:1.2vw;
+}
+
+.mat-button-toggle-checked {
+  background: none;
+  color: chartreuse;
+}
+
+input {
+  background: none;
+  border: none;
+  border-bottom: 0.1vw solid green;
+  color: rgb(197, 196, 196);
+  margin-bottom: 5%;
+  font-size: 1vw;
+  text-align: center;
+  width: 70%;
+  height: 1.5vw;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 0.1vw solid blue;
+}
+
+.login-button {
+  margin-top:1vw;
+  padding: 0.3vw;
+  width: 20%;
+  height: auto;
+  background: none;
+  color: white;
+  border: 0.15vw solid greenyellow;
+  font-size:1.1vw;
+}
+
+.login-button:hover {
+  background: none;
+  border: 0.15vw solid blue;
+  cursor: pointer;
+}
+
+.login-button :disabled,
+.login-button[disabled]{
+  border: 0.15vw solid rgb(78, 78, 78);
+  cursor: default;
+}
+
+.another-actions {
+  color: white;
+  font-size:1vw;
+}
+.another-actions a {
+  text-decoration: none;
+  color: rgb(98, 223, 154);
+}
+
+.another-actions a:hover {
+  color: rgb(68, 68, 248);
+}
+
+.go-back {
+  display: block;
+  margin: auto;
+  margin-top: -1.1vw;
+  min-height: 4vw;
+  width: 9vw;
+}
+
+.showpass {
+  background: none;
+  border: none;
+  color: rgb(143, 185, 197);
+  font-size:1.2vw;
+  margin-top: -3vw;
+  margin-right: 1.1vw;
+  float: right;
+}
+
+.showpass :hover {
+  cursor: pointer;
+  color: rgb(96, 121, 128);
+}
+
+.error-message{
+  color:red;
+  font-size:xx-small;
+  height: 0.5vw;
+}

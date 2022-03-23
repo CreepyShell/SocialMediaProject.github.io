@@ -1,0 +1,122 @@
+.register-page {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  background-image: url("/assets/pictures/register_photo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-table;
+}
+
+.register-page h1 {
+  color: white;
+  font-family: none;
+  border-bottom: 0.4vw solid green;
+  width: 10%;
+  margin: auto;
+  margin-top: 7%;
+  margin-bottom: 2vw;
+  font-size: 2.5vw;
+}
+
+.input {
+  border: 2px solid rgb(6, 13, 145);
+  border-image: linear-gradient(
+    to top right,
+    rgba(6, 13, 145, 1) 0%,
+    rgba(9, 121, 42, 1) 48%,
+    rgba(245, 249, 21, 1) 100%
+  );
+  width: 25vw;
+  height: auto;
+  margin: auto;
+  border-image-slice: 1;
+  padding: 2vw;
+}
+
+.input input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid green;
+  color: rgb(197, 196, 196);
+  margin-bottom: 1.2vw;
+  font-size: 1vw;
+  text-align: center;
+  width: 70%;
+  height: 1.5vw;
+}
+
+.input input:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(34, 190, 190);
+}
+
+.showpass,
+.showconfpass {
+  background: none;
+  border: none;
+  color: rgb(143, 185, 197);
+  font-size: 1.1vw;
+  margin-top: -2.5vw;
+  margin-right: 3.5vh;
+  float: right;
+  display: block;
+}
+
+.showpass :hover,
+.showconfpass :hover {
+  cursor: pointer;
+  color: rgb(96, 121, 128);
+}
+
+.register-button {
+  margin-top: 0.7vw;
+  padding: 0.3vw;
+  width: 6vw;
+  height: 2vw;
+  background: none;
+  color: white;
+  border: 0.15vw solid rgb(172, 189, 19);
+  font-size: 1vw;
+}
+
+.register-button:hover {
+  background: none;
+  border: 0.15vw solid rgb(47, 248, 255);
+  cursor: pointer;
+  background-color: rgba(34, 32, 32, 0.719);
+}
+
+.register-button :disabled,
+.register-button[disabled] {
+  border: 0.15vw solid rgb(78, 78, 78);
+  cursor: default;
+}
+
+.another-actions {
+  color: white;
+  font-size: 1vw;
+}
+.another-actions a {
+  text-decoration: none;
+  color: rgb(98, 223, 154);
+}
+
+.another-actions a:hover {
+  color: rgb(68, 212, 248);
+}
+
+.go-back {
+  display: block;
+  margin: auto;
+  margin-top: -1.2vw;
+  width: 9vw;
+  min-height: 4vw;
+}
+
+.error-message {
+  color: red;
+  font-size: xx-small;
+  height: 0.5vw;
+}

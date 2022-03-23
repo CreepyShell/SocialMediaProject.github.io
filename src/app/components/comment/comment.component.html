@@ -1,0 +1,43 @@
+<div class="comment-container">
+    <div class="comment-actions">
+        <button *ngIf="canDeleteLikeAdmin()" (click)="deleteCommentLikeAdmin()"
+            title="delete this comment like administrator" class="delete-comment-admin">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button *ngIf="canChangeLikeUser()" (click)="deleteCommentLikeUser()" class="delete-comment-user">
+            <mat-icon color="warn">delete</mat-icon>
+        </button>
+        <button *ngIf="canChangeLikeUser()" (click)="openSendButton()" class="update-comment">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
+    <div class="comment-info">
+        <p class="comment-date"> Created at {{this.Comment!.createdAt | date:'medium'}}</p>
+        <div class="author-info">
+            <img [src]="this.commentAuthor?.avatar" width="25vw" height="25hws"
+                onerror="this.src='/assets/pictures/user_profile.png'">
+            <h6>{{this.commentAuthor?.userName}}</h6>
+        </div>
+        <h5 [id]="'comment-text'+this.Comment.id" [contentEditable]="this.isOpenSentButton">
+            {{this.Comment!.commentText}}</h5>
+        <p class="error-message" *ngIf="this.errorUpdateMessage">{{this.errorUpdateMessage}}</p>
+        <button class="send-comment-button" (click)="editComment()" *ngIf="this.isOpenSentButton">
+            <mat-icon>send</mat-icon>
+        </button>
+        <div class="comment-reactions">
+            <button class="comment-like-button" (click)="reactComment(true)" [disabled]="this.disableLikes"
+                mat-raised-button color="primary" [matBadge]="this.positiveReactionsCount" matBadgePosition="after"
+                matBadgeColor="accent">
+                <mat-icon [ngStyle]="this.likeStyle">thumb_up</mat-icon>
+            </button>
+            <button class="comment-dislike-button" (click)="reactComment(false)" [disabled]="this.disableLikes"
+                mat-raised-button color="primary" [matBadge]="this.commentReaction.length - this.positiveReactionsCount"
+                matBadgePosition="after" matBadgeColor="accent">
+                <mat-icon [ngStyle]="this.dislikeStyle">thumb_down</mat-icon>
+            </button>
+        </div>
+    </div>
+    <button class="add-comment-to-comment">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
