@@ -1,6 +1,6 @@
 .register-page {
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   text-align: center;
   background-image: url("/assets/pictures/register_photo.png");
@@ -12,12 +12,12 @@
 .register-page h1 {
   color: white;
   font-family: none;
-  border-bottom: 0.4vw solid green;
-  width: 10%;
+  border-bottom: 0.4rem solid green;
+  width: 9rem;
   margin: auto;
-  margin-top: 7%;
-  margin-bottom: 2vw;
-  font-size: 2.5vw;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
 }
 
 .input {
@@ -28,11 +28,11 @@
     rgba(9, 121, 42, 1) 48%,
     rgba(245, 249, 21, 1) 100%
   );
-  width: 25vw;
-  height: auto;
+  width: 25rem;
+  height: 14rem;
   margin: auto;
   border-image-slice: 1;
-  padding: 2vw;
+  padding: 2rem;
 }
 
 .input input {
@@ -40,11 +40,11 @@
   border: none;
   border-bottom: 1px solid green;
   color: rgb(197, 196, 196);
-  margin-bottom: 1.2vw;
-  font-size: 1vw;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
   text-align: center;
-  width: 70%;
-  height: 1.5vw;
+  width: 20rem;
+  height: 1.5rem;
 }
 
 .input input:focus {
@@ -57,9 +57,9 @@
   background: none;
   border: none;
   color: rgb(143, 185, 197);
-  font-size: 1.1vw;
-  margin-top: -2.5vw;
-  margin-right: 3.5vh;
+  font-size: 1.1rem;
+  margin-top: -2.5rem;
+  margin-right: 1.5rem;
   float: right;
   display: block;
 }
@@ -71,32 +71,32 @@
 }
 
 .register-button {
-  margin-top: 0.7vw;
-  padding: 0.3vw;
-  width: 6vw;
-  height: 2vw;
+  margin-top: 0.7rem;
+  padding: 0.3rem;
+  width: 6rem;
+  height: 2rem;
   background: none;
   color: white;
-  border: 0.15vw solid rgb(172, 189, 19);
-  font-size: 1vw;
+  border: 0.1rem solid rgb(172, 189, 19);
+  font-size: 1rem;
 }
 
 .register-button:hover {
   background: none;
-  border: 0.15vw solid rgb(47, 248, 255);
+  border: 0.1rem solid rgb(47, 248, 255);
   cursor: pointer;
   background-color: rgba(34, 32, 32, 0.719);
 }
 
 .register-button :disabled,
 .register-button[disabled] {
-  border: 0.15vw solid rgb(78, 78, 78);
+  border: 0.1rem solid rgb(78, 78, 78);
   cursor: default;
 }
 
 .another-actions {
   color: white;
-  font-size: 1vw;
+  font-size: 1rem;
 }
 .another-actions a {
   text-decoration: none;
@@ -110,13 +110,13 @@
 .go-back {
   display: block;
   margin: auto;
-  margin-top: -1.2vw;
-  width: 9vw;
-  min-height: 4vw;
+  margin-top: -1.2rem;
+  width: 9rem;
+  min-height: 8rem;
 }
 
 .error-message {
   color: red;
   font-size: xx-small;
-  height: 0.5vw;
+  height: 0.5rem;
 }

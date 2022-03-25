@@ -61,13 +61,11 @@
   background-image: url("/assets/pictures/main_page_photo.jpg");
   width: 100%;
   min-height: 100%;
-  border: 1 px solid red;
 }
 
 .post-content {
   width: 50rem;
-  float: right;
-  margin-right: 10rem;
+  margin:auto;
 }
 
 .open-create-post-button {
@@ -191,4 +189,9 @@
 .create-post-button:hover {
   cursor: pointer;
   background: rgb(48, 158, 54);
+}
+
+.slide-toggle{
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }

@@ -11,7 +11,7 @@ export class postService {
   constructor(
     private _httpService: httpService,
     private _authService: authService
-  ) {}
+  ) { }
 
   public getPostsById(id: string) {
     this._httpService.getRequest<postModel>(
@@ -91,5 +91,21 @@ export class postService {
           return of(err as HttpErrorResponse);
         })
       );
+  }
+
+  public getMostPopularPosts(count: number) {
+    let accessToken = this._authService.getAccessTokenFromLocalStorage();
+    return this._httpService.getRequest<postModel[]>(`/api/posts/popular/${count}`, this._httpService.setHttpHeader(
+      ['Authorization'],
+      [`Bearer ${accessToken}`]
+    ), null);
+  }
+
+  public getMostDiscussionPosts(count: number) {
+    let accessToken = this._authService.getAccessTokenFromLocalStorage();
+    return this._httpService.getRequest<postModel[]>(`/api/posts/discussed/${count}`, this._httpService.setHttpHeader(
+      ['Authorization'],
+      [`Bearer ${accessToken}`]
+    ), null);
   }
 }

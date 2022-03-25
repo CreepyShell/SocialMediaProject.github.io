@@ -44,15 +44,14 @@ export class CommentComponent implements OnInit, OnDestroy {
   public errorUpdateMessage: string | undefined = undefined;
 
   private defaultColor = 'rgb(173, 173, 173)';
-  private currentColor = this.defaultColor;
-  private dislikeColor = '#8F8F8F';
-  private likeColor = '#C0C0C0';
+  private dislikeColor = '#845EC2';
+  private likeColor = '#6AB3A4';
   public likeStyle: { [klass: string]: any } | null = {
-    'color': this.defaultColor,
+    color: this.defaultColor,
     'font-size': 'large',
   };
   public dislikeStyle: { [klass: string]: any } | null = {
-    'color': this.defaultColor,
+    color: this.defaultColor,
     'font-size': 'large',
   };
 
@@ -63,7 +62,7 @@ export class CommentComponent implements OnInit, OnDestroy {
   }
 
   public reactComment(isLike: boolean) {
-    this.disableLikes = false;
+    this.disableLikes = true;
     let reaction: reactionModel = {
       id: undefined,
       userId: this.User!.id,
@@ -78,7 +77,6 @@ export class CommentComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.$unsubscribe))
       .subscribe({
         next: (resp) => {
-          this.disableLikes = false;
           if (resp.body) {
             let existReaction = this.commentReaction.find(
               (pr) => pr.id === resp.body!.id
@@ -87,7 +85,6 @@ export class CommentComponent implements OnInit, OnDestroy {
               this.commentReaction.push(resp.body);
               if (resp.body.isLike) {
                 this.positiveReactionsCount++;
-                this.currentColor = this.likeColor;
               }
               return;
             }
@@ -130,6 +127,10 @@ export class CommentComponent implements OnInit, OnDestroy {
                 }
               });
           }
+        },
+        complete: () => {
+          this.setLikes();
+          this.disableLikes = false;
         },
       });
   }
@@ -315,6 +316,7 @@ export class CommentComponent implements OnInit, OnDestroy {
           this.positiveReactionsCount = resp.body!.filter(
             (cr) => cr.isLike
           ).length;
+          this.setLikes();
         },
         error: (err) => {
           if (
@@ -339,6 +341,34 @@ export class CommentComponent implements OnInit, OnDestroy {
           }
         },
       });
+  }
+
+  private setLikes() {
+    this.likeStyle = {
+      color: this.defaultColor,
+      'font-size': 'large',
+    };
+    this.dislikeStyle = {
+      color: this.defaultColor,
+      'font-size': 'large',
+    };
+    let reaction: reactionModel | undefined = this.commentReaction.find(
+      (cr) => cr.userId === this.User.id
+    );
+    if (reaction) {
+      if (reaction.isLike) {
+        this.likeStyle = {
+          color: this.likeColor,
+          'font-size': 'large',
+        };
+        return;
+      }
+      this.dislikeStyle = {
+        color: this.dislikeColor,
+        'font-size': 'large',
+      };
+      return;
+    }
   }
 
   ngOnDestroy(): void {

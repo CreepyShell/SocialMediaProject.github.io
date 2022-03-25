@@ -29,7 +29,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +55,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatSelectModule,
     FormsModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSlideToggleModule
   ],
   providers: [
     httpService,
@@ -69,4 +70,4 @@ import { MatBadgeModule } from '@angular/material/badge';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

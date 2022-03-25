@@ -6,7 +6,7 @@
         <a [routerLink]="this.route"><button *ngIf="!this.User" [disabled]="!this.isLoadUser" class="register-button"
                 (click)="GoToRegisterPage()">Register</button></a>
         <a routerLink="/profile" class="go-to-user-profile" *ngIf="this.User">Go to profile</a>
-        </div>
+    </div>
 </mat-toolbar>
 <div class="main-content">
     <button class="open-create-post-button" (click)="openCreatePostContainer()">Create discussion</button>
@@ -33,8 +33,19 @@
     <mat-spinner [diameter]="200" style="margin: auto;" *ngIf="!this.isLoadUser || !this.isLoadPosts">
     </mat-spinner>
     <div class="post-content" *ngIf="this.isLoadUser && this.isLoadPosts">
+        <mat-form-field class="sort-posts" appearance="fill">
+            <mat-label>Sort discussions by</mat-label>
+            <mat-select [disabled]="!this.User" (selectionChange)="orderPosts($event.value)">
+              <mat-option value="popular">Popularity</mat-option>
+              <mat-option value="comments">Comments</mat-option>
+              <mat-option value="latest">Latest</mat-option>
+            </mat-select>
+          </mat-form-field><br>
+        <mat-slide-toggle [disabled]="!this.User" class="slide-toggle" color="warn" checked="false" (change)="onlyMinePostChange($event)">
+            Only my discussions
+        </mat-slide-toggle>
         <div *ngFor="let Post of Posts">
             <app-post [Post]="Post" (deletePostEvent)="deletePostEvent($event)" [User]="this.User"></app-post>
-        </div>
+        </div>       
     </div>
 </div>

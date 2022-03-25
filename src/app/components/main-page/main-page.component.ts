@@ -4,6 +4,7 @@ import {
   HttpStatusCode,
 } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntil } from 'rxjs';
 import { Subject } from 'rxjs/internal/Subject';
@@ -26,7 +27,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
     private _authService: authService,
     private _postService: postService,
     public snackBar: MatSnackBar
-  ) {}
+  ) { }
   public route: string = '';
   public Posts: postModel[] = [];
   public User: UserModel | undefined;
@@ -35,7 +36,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
   public isOpenCreatePost: boolean = false;
   public errorCreatePostMessage: string | undefined = undefined;
   public selectedPostTopic: string | undefined = undefined;
+  private count: number = 20;
   private $unsubscribe = new Subject<void>();
+  private cachedPost: postModel[] = [];
   public GoToRegisterPage() {
     this.route = '/register';
   }
@@ -230,6 +233,47 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   public deletePostEvent(postId: string) {
     this.Posts = this.Posts.filter((p) => p.id !== postId);
+    if (this.cachedPost) this.cachedPost = this.cachedPost.filter((p) => p.id !== postId);
+  }
+  public onlyMinePostChange($event: MatSlideToggleChange) {
+    if ($event.checked) {
+      this.cachedPost = this.Posts;
+      this.Posts = this.Posts.filter(p => p.userId === this.User!.id);
+      return;
+    }
+    this.Posts = this.cachedPost;
+  }
+
+  public orderPosts(value: string) {
+    if (value === "popular") {
+      this.cachedPost = this.Posts;
+      this._postService.getMostPopularPosts(this.count)
+        .pipe(takeUntil(this.$unsubscribe))
+        .subscribe({
+          next: resp => {
+            this.Posts = resp.body!;
+          },
+          error: () => {
+            this.snackBar.open("Something went wrong, plese reload page", undefined, { duration: 6000 });
+          }
+        });
+    }
+    else if (value === "comments") {
+      this.cachedPost = this.Posts;
+      this._postService.getMostDiscussionPosts(this.count)
+        .pipe(takeUntil(this.$unsubscribe))
+        .subscribe({
+          next: resp => {
+            this.Posts = resp.body!;
+          },
+          error: () => {
+            this.snackBar.open("Something went wrong, plese reload page", undefined, { duration: 6000 });
+          }
+        });
+    }
+    else {
+      this.Posts = this.cachedPost;
+    }
   }
 
   ngOnDestroy(): void {
